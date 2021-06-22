@@ -1,0 +1,42 @@
+PROGRAM 9
+Palindrome or not
+
+echo "Enter a string"
+read str
+len=${#str}
+for((i=$len - 1;i>=0;i--))
+do
+ rev="$rev${str:$i:1}"
+done
+if [ $str = $rev ]
+then
+ echo "The string $str is palindrome"
+else
+ echo "The string $str is not palindrome"
+fi
+
+
+
+
+PROGRAM 10
+Count no of user
+
+cat /etc/passwd | cut -f1 -d":" | wc -l
+
+
+
+
+PROGRAM 11
+file permission
+
+echo "The files are"
+for i in *
+do
+ if [ -f $i ]
+ then 
+  if [ -r $i -a -w $i -a -x $i ] 
+  then 
+   echo $i
+  fi
+ fi
+done
